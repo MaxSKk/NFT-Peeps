@@ -1,0 +1,31 @@
+@import "_nullstyle";
+
+$text-color: #404756;
+$title-color: #222222;
+$button-color: #f7859c;
+
+body {
+   //font-family: "Montserrat", sans-serif;//
+   font-family: "Open Sans", sans-serif;
+   font-weight: 400;
+   font-size: 18px;
+   line-height: 25px;
+   color: $text-color;
+}
+
+.wrapper {
+   overflow: hidden;
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+}
+
+.main {
+   flex: 1 1 auto;
+}
+
+.container {
+   max-width: 1000px;
+   margin: 0 auto;
+   padding: 0px 10px;
+}
