@@ -28,4 +28,149 @@ body {
    max-width: 1000px;
    margin: 0 auto;
    padding: 0px 10px;
+
+   @media (max-width: 767.98px) {
+      max-width: none;
+   }
+}
+
+/********************************BLOCKS******************************************/
+
+.button {
+   display: inline-block;
+   padding: 10px 30px;
+   font-weight: 700;
+   color: #ffffff;
+   background-color: $button-color;
+   border-radius: 12px;
+   transition: all 0.3s ease-in-out;
+
+   &:hover {
+      background-color: #ff597a;
+   }
+}
+
+/********************************HEADER--MENU******************************************/
+
+.header {
+   position: relative;
+   z-index: 100;
+   padding: 20px 0px;
+   &__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+
+   &__burger {
+      display: none;
+   }
+}
+
+.menu {
+   display: flex;
+   align-items: center;
+
+   &__list {
+      display: flex;
+   }
+
+   &__item {
+      margin-right: 30px;
+   }
+
+   &__link {
+      font-weight: 700;
+      color: $title-color;
+      transition: color 0.3s ease;
+
+      &:hover {
+         color: $button-color;
+      }
+   }
+}
+
+@media (max-width: 767.98px) {
+   .header {
+      &__burger {
+         display: block;
+         width: 25px;
+         height: 25px;
+         position: relative;
+         z-index: 150;
+         cursor: pointer;
+
+         &::after,
+         &::before,
+         span {
+            content: "";
+            background-color: $title-color;
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            left: 0;
+            border-radius: 10px;
+            transition: all 0.5s ease-in-out 0.1s;
+         }
+
+         &::before {
+            top: 0;
+         }
+
+         &::after {
+            bottom: 0;
+         }
+
+         span {
+            top: 11px;
+         }
+
+         &.open {
+            &::before {
+               transform: rotate(45deg);
+               top: 11px;
+            }
+
+            &::after {
+               transform: rotate(-45deg);
+               bottom: 11px;
+            }
+
+            span {
+               transform: scale(0);
+            }
+         }
+      }
+   }
+
+   .menu {
+      position: fixed;
+      top: -200%;
+      left: 0;
+      z-index: 125;
+      height: 100%;
+      width: 100%;
+      background-color: #ffdbb4;
+      flex-direction: column;
+      text-align: center;
+      padding: 100px 0px 20px;
+      overflow: auto;
+      transition: all 0.8s ease-out;
+
+      &.open {
+         top: 0;
+      }
+
+      &__list {
+         flex-direction: column;
+      }
+
+      &__item {
+         margin: 0px 0px 30px;
+      }
+   }
+
+   body.lock {
+      overflow: hidden;
+   }
 }

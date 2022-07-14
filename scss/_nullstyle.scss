@@ -39,6 +39,8 @@ input,
 button,
 textarea {
    font-family: inherit;
+   font-size: inherit;
+   line-height: inherit;
 }
 input::-ms-clear {
    display: none;
