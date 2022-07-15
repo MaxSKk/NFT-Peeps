@@ -96,6 +96,13 @@ body {
   color: #404756;
 }
 
+@media (max-width: 767.98px) {
+  body {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
 .wrapper {
   overflow: hidden;
   display: -webkit-box;
@@ -142,11 +149,51 @@ body {
   background-color: #ff597a;
 }
 
+.title-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #222222;
+  text-align: center;
+}
+
+.title-block__text {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  margin-bottom: 4px;
+  position: relative;
+}
+
+.title-block__text svg {
+  position: absolute;
+  top: -10px;
+  left: -17px;
+  z-index: -1;
+}
+
+.title-block__title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 65px;
+  line-height: 58px;
+}
+
 /********************************HEADER--MENU******************************************/
 .header {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 100;
-  padding: 20px 0px;
+  padding: 15px 0px;
 }
 
 .header__inner {
@@ -271,6 +318,53 @@ body {
   }
   body.lock {
     overflow: hidden;
+  }
+}
+
+/********************************TOP******************************************/
+.top {
+  height: calc(100vh + 194px);
+  padding-top: 194px;
+  background-image: url(../img/top/top-bg.svg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+}
+
+.top__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.top__title-block h1 {
+  font-size: 97px;
+  line-height: 87px;
+}
+
+.top__text {
+  text-align: center;
+  max-width: 430px;
+  margin: 45px 0px 30px 0px;
+}
+
+@media (max-width: 999px) {
+  .top {
+    padding-top: 130px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .top__title-block h1 {
+    font-size: 50px;
+    line-height: 45px;
   }
 }
 /*# sourceMappingURL=style.css.map */
